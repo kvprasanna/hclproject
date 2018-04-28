@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using MortgageCalculator.Dto;
+using MortgageCalculator.Web.Models;
+
 namespace MortgageCalculator.Web.Controllers
 {
     public class HomeController : Controller
@@ -16,6 +18,7 @@ namespace MortgageCalculator.Web.Controllers
             {
                 string apiUrl = "http://localhost:49608/api/Mortgage";
                 var mortgages = new List<Mortgage>();
+                var displaymortgages = new DisplayModel();
                 using (HttpClient client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(apiUrl);
@@ -29,12 +32,17 @@ namespace MortgageCalculator.Web.Controllers
                         var data = await response.Content.ReadAsStringAsync();
                         mortgages = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mortgage>>(data);
                         
-                }
+                    }
+
+                    displaymortgages = new DisplayModel()
+                    {
+                        Mortgages = mortgages
+                    };
 
 
                 }
 
-                return View(mortgages);
+                return View(displaymortgages);
 
             }
         

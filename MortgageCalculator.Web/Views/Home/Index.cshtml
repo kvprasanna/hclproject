@@ -1,4 +1,4 @@
-﻿@model List<MortgageCalculator.Dto.Mortgage>
+﻿@model MortgageCalculator.Web.Models.DisplayModel
 @{
     ViewBag.Title = "Mortgage Details";
 }
@@ -7,10 +7,26 @@
     <h1>Mortgage Calculator</h1>
     <p class="lead">
         The Mortgage Calculator helps you:
-        <ul>
-            <li>Choose the right loan for you</li>
-            <li>The Interests and Repayment on your loan</li>
-        </ul>
+        <table id="view" width="100%" cellpadding="2" cellspacing="0">
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.PurchasePrice)
+                    @Html.TextAreaFor(model => model.PurchasePrice)
+                    @Html.HiddenFor(model => model.PurchasePrice)
+                </td>
+                <td>
+                    @Html.LabelFor(model => model.InterestRate)
+                    @Html.TextAreaFor(model => model.InterestRate)
+                    @Html.HiddenFor(model => model.InterestRate)
+                </td>
+                <td>
+                    @Html.LabelFor(model => model.LoanTermYears)
+                    @Html.TextAreaFor(model => model.LoanTermYears)
+                    @Html.HiddenFor(model => model.LoanTermYears)
+                </td>
+                            
+            </tr>
+        </table>
     </p>
 </div>
 
@@ -24,53 +40,54 @@
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <table class="table" id="mortgageview" width="100%" cellpadding="2" cellspacing="0">
-                        <thead>
-                        <th>Name</th>
-                        <th>MortgageType</th>
-                        <th>InterestRepayment</th>
-                        <th>EffectiveStartDate</th>
-                        <th>EffectiveEndDate</th>
-                        <th>TermsInMonths</th>
-                        <th>CancellationFee</th>
-                        <th>EstablishmentFee</th>
+                    
+                        <table class="table" id="mortgageview" width="100%" cellpadding="2" cellspacing="0">
+                            <thead>
+                            <th>Name</th>
+                            <th>MortgageType</th>
+                            <th>InterestRepayment</th>
+                            <th>EffectiveStartDate</th>
+                            <th>EffectiveEndDate</th>
+                            <th>TermsInMonths</th>
+                            <th>CancellationFee</th>
+                            <th>EstablishmentFee</th>
 
-                        </thead>
-                        @foreach (var item in Model)
-                    {
+                            </thead>
+                            @foreach (var item in Model.Mortgages)
+                             {
 
-                    <tr>
-                        <td>
-                            @item.Name
-                        </td>
-                        <td>
-                            @item.MortgageType
-                        </td>
-                        <td>
-                            @item.InterestRepayment
-                        </td>
-                        <td>
-                            @item.EffectiveStartDate
-                        </td>
-                        <td>
-                            @item.EffectiveEndDate
-                        </td>
-                        <td>
-                            @item.TermsInMonths
-                        </td>
-                        <td>
-                            @item.CancellationFee
-                        </td>
-                        <td>
-                            @item.EstablishmentFee
-                        </td>
+                                        <tr>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td>
+                                                @item.MortgageType
+                                            </td>
+                                            <td>
+                                                @item.InterestRepayment
+                                            </td>
+                                            <td>
+                                                @item.EffectiveStartDate
+                                            </td>
+                                            <td>
+                                                @item.EffectiveEndDate
+                                            </td>
+                                            <td>
+                                                @item.TermsInMonths
+                                            </td>
+                                            <td>
+                                                @item.CancellationFee
+                                            </td>
+                                            <td>
+                                                @item.EstablishmentFee
+                                            </td>
 
-                    </tr>
+                                        </tr>
 
-}
-                    </table>
+                                }
+                                                </table>
 
-                </div>
+                                        </div>
 
             </fieldset>
         </form>
