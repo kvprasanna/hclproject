@@ -1,0 +1,83 @@
+﻿@model List<MortgageCalculator.Dto.Mortgage>
+@{
+    ViewBag.Title = "Mortgage Details";
+}
+
+<div class="jumbotron">
+    <h1>Mortgage Calculator</h1>
+    <p class="lead">
+        The Mortgage Calculator helps you:
+        <ul>
+            <li>Choose the right loan for you</li>
+            <li>The Interests and Repayment on your loan</li>
+        </ul>
+    </p>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal">
+            <fieldset>
+               
+                <legend>Mortgage Details</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <table class="table" id="mortgageview" width="100%" cellpadding="2" cellspacing="0">
+                        <thead>
+                        <th>Name</th>
+                        <th>MortgageType</th>
+                        <th>InterestRepayment</th>
+                        <th>EffectiveStartDate</th>
+                        <th>EffectiveEndDate</th>
+                        <th>TermsInMonths</th>
+                        <th>CancellationFee</th>
+                        <th>EstablishmentFee</th>
+
+                        </thead>
+                        @foreach (var item in Model)
+                    {
+
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.MortgageType
+                        </td>
+                        <td>
+                            @item.InterestRepayment
+                        </td>
+                        <td>
+                            @item.EffectiveStartDate
+                        </td>
+                        <td>
+                            @item.EffectiveEndDate
+                        </td>
+                        <td>
+                            @item.TermsInMonths
+                        </td>
+                        <td>
+                            @item.CancellationFee
+                        </td>
+                        <td>
+                            @item.EstablishmentFee
+                        </td>
+
+                    </tr>
+
+}
+                    </table>
+
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+@section scripts
+{
+
+
+}
