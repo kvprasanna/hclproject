@@ -20,5 +20,17 @@ namespace MortgageCalculator.Api.Controllers
             var mortgageService = new MortgageService();
             return mortgageService.GetAllMortgages().FirstOrDefault(x => x.MortgageId == id);
         }
+        [HttpGet]
+        //GET: api/Mortgage/LoanPayment
+        [Route("api/LoanPayment")]
+        public decimal LoanPayment()
+        {
+
+            var pCalculator = new PaymentCalculator();
+            pCalculator.PurchasePrice = 50000;
+            pCalculator.InterestRate = (decimal) 6.0;
+            pCalculator.LoanTermYears = 5;
+            return pCalculator.CalculatePayment();
+        }
     }
 }

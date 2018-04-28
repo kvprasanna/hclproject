@@ -19,6 +19,7 @@ namespace MortgageCalculator.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
         }
     }
 }

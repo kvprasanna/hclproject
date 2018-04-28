@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using MortgageCalculator.Api.Repos;
 using MortgageCalculator.Dto;
 
@@ -23,7 +24,7 @@ namespace MortgageCalculator.Api.Services
 
         public List<Mortgage> GetAllMortgages()
         {
-            return _mortgageRepo.GetAllMortgages();
+            return _mortgageRepo.GetAllMortgages().OrderBy(x => x.MortgageType).ToList();
         }
     }
 }
