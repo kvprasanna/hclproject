@@ -67,3 +67,6 @@ F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Api\obj\Debug\Mor
 F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Api\obj\Debug\MortgageCalculator.Api.csproj.CoreCompileInputs.cache
 F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Api\obj\Debug\MortgageCalculator.Api.dll
 F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Api\obj\Debug\MortgageCalculator.Api.pdb
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Api\bin\System.Web.Cors.dll
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Api\bin\System.Web.Http.Cors.dll
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Api\bin\System.Web.Http.Cors.xml

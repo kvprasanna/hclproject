@@ -12,8 +12,7 @@ namespace MortgageCalculator.Web.Controllers
 {
     public class HomeController : Controller
     {
-        
-            // GET: Mortgage details
+           // GET: Mortgage details
             public async Task<ActionResult> Index()
             {
                 string apiUrl = "http://localhost:49608/api/Mortgage";
@@ -38,8 +37,7 @@ namespace MortgageCalculator.Web.Controllers
                     {
                         Mortgages = mortgages
                     };
-
-
+                
                 }
 
                 return View(displaymortgages);

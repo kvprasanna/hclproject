@@ -10,21 +10,36 @@
         <table id="view" width="100%" cellpadding="2" cellspacing="0">
             <tr>
                 <td>
+                    @Html.LabelFor(model => model.MortgageTypes)
+                    @Html.EnumDropDownListFor(model => model.MortgageTypes, null, new {@id = "ddlMortgageTypes", @class = "form-control", @style = "width:200px;"})
+                </td>
+                <td>
                     @Html.LabelFor(model => model.PurchasePrice)
-                    @Html.TextAreaFor(model => model.PurchasePrice)
+                    @Html.TextBoxFor(model => model.PurchasePrice, new {style = "width: 150px; height:35px;"})
                     @Html.HiddenFor(model => model.PurchasePrice)
                 </td>
                 <td>
                     @Html.LabelFor(model => model.InterestRate)
-                    @Html.TextAreaFor(model => model.InterestRate)
+                    @Html.TextBoxFor(model => model.InterestRate, new {style = "width: 150px; height:35px;"})
                     @Html.HiddenFor(model => model.InterestRate)
                 </td>
                 <td>
                     @Html.LabelFor(model => model.LoanTermYears)
-                    @Html.TextAreaFor(model => model.LoanTermYears)
+                    @Html.TextBoxFor(model => model.LoanTermYears, new {style = "width: 150px; height:35px;"})
                     @Html.HiddenFor(model => model.LoanTermYears)
                 </td>
-                            
+
+                <td>
+                    <input type="button" id="paycalcid" value="Calculate"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    
+                        Total Monthly Payment : <div id="payresult"></div>
+                  
+                </td>
             </tr>
         </table>
     </p>
@@ -95,6 +110,29 @@
 </div>
 @section scripts
 {
+    <script>
+        $(document).ready(function () {
+ 
+            $("#paycalcid").on('click', function () {
 
+                var purchaseamout = $('#PurchasePrice').val();
+                var interestrate = $('#InterestRate').val();
+                var months = $('#LoanTermYears').val();
+
+                $.ajax({
+                    url: 'http://localhost:49608/api/LoanPayment/' + purchaseamout + '/' + interestrate + '/' + months,
+                    type: 'GET',
+                    dataType: 'json',
+                }).done(function (resp) {
+                    $('#payresult').html(resp);
+                    }).error(function (err) {
+                    alert("Error " + err.status);
+ 
+                });
+ 
+            });
+ 
+        });
+    </script>
 
 }

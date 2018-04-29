@@ -5,7 +5,17 @@ using System.Web;
 
 namespace MortgageCalculator.Api.Services
 {
-  public class PaymentCalculator
+    public interface IPaymentCalculator
+    {
+        decimal PurchasePrice { get; set; }
+        decimal DownPayment { get; set; }
+        decimal LoanAmount { get; set; }
+        decimal InterestRate { get; set; }
+        double LoanTermMonths { get; set; }
+        double LoanTermYears { get; set; }
+        decimal CalculatePayment();
+    }
+  public class PaymentCalculator: IPaymentCalculator
     {
         private const int MonthsPerYear = 12;
         public decimal PurchasePrice { get; set; }
@@ -13,6 +23,7 @@ namespace MortgageCalculator.Api.Services
         public decimal LoanAmount
         {
             get { return (PurchasePrice - DownPayment); }
+            set { }
         }
         public decimal InterestRate { get; set; }
         public double LoanTermMonths { get; set; }

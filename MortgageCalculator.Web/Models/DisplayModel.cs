@@ -13,6 +13,7 @@ namespace MortgageCalculator.Web.Models
         public decimal InterestRate { get; set; }
         public double LoanTermYears { get; set; }
         public IEnumerable<Mortgage> Mortgages { get; set; }
+        public MortgageType MortgageTypes { get; set; }
     }
 }
 
