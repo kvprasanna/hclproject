@@ -34,11 +34,17 @@ namespace MortgageCalculator.Api.Services
         }
         public decimal CalculatePayment()
         {
-            decimal payment = 0;
-            decimal rate = ((InterestRate / MonthsPerYear) / 100);
+           decimal payment = 0;
+
             if (LoanTermMonths > 0)
             {
-             payment = (LoanAmount / (decimal)LoanTermMonths);
+                if (InterestRate != 0)
+                {
+                    decimal rate = ((InterestRate / MonthsPerYear) / 100);
+                    decimal factor = (rate + (rate / (decimal) (Math.Pow((double) (rate + 1), LoanTermMonths) - 1)));
+                    payment = (LoanAmount * factor);
+                }
+                else payment = (LoanAmount / (decimal)LoanTermMonths);
             }
             return Math.Round(payment, 2);
         }

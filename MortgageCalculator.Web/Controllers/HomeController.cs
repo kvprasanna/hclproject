@@ -17,7 +17,7 @@ namespace MortgageCalculator.Web.Controllers
             {
                 string apiUrl = "http://localhost:49608/api/Mortgage";
                 var mortgages = new List<Mortgage>();
-                var displaymortgages = new DisplayModel();
+                DisplayModel displaymortgages;
                 using (HttpClient client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(apiUrl);

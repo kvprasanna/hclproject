@@ -27,10 +27,12 @@ namespace MortgageCalculator.Api.Controllers
         [Route("api/LoanPayment/{purchaseprice}/{interestRate}/{loanyears}")]
         public decimal LoanPayment(decimal purchaseprice, decimal interestRate, double loanyears)
         {
-            var pCalculator = new PaymentCalculator();
-            pCalculator.PurchasePrice = purchaseprice;
-            pCalculator.InterestRate = interestRate;
-            pCalculator.LoanTermYears = loanyears;
+            var pCalculator = new PaymentCalculator
+            {
+                PurchasePrice = purchaseprice,
+                InterestRate = interestRate,
+                LoanTermYears = loanyears
+            };
             return pCalculator.CalculatePayment();
         }
     }
