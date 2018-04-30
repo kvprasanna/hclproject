@@ -13,7 +13,7 @@ namespace MortgageCalculator.Api.Controllers
         public IEnumerable<Dto.Mortgage> Get()
         {
            var mortgageService = new MortgageService();
-            return mortgageService.GetAllMortgages();
+            return mortgageService.GetAllMortgages().OrderBy(x => x.MortgageType).ThenBy(x => x.InterestRate);
         }
 
         // GET: api/Mortgage/5

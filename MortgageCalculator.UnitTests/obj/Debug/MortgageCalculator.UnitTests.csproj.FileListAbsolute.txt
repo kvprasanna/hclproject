@@ -67,3 +67,7 @@ F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.UnitTests\obj\Deb
 F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.UnitTests\obj\Debug\MortgageCalculator.UnitTests.csproj.CoreCompileInputs.cache
 F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.UnitTests\obj\Debug\MortgageCalculator.UnitTests.dll
 F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.UnitTests\obj\Debug\MortgageCalculator.UnitTests.pdb
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.UnitTests\bin\Debug\MortgageCalculator.UnitTests.dll.config
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.UnitTests\bin\Debug\System.Web.Http.Cors.dll
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.UnitTests\bin\Debug\System.Web.Cors.dll
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.UnitTests\bin\Debug\System.Web.Http.Cors.xml

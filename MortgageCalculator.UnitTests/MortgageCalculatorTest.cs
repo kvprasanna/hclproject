@@ -41,7 +41,7 @@ namespace MortgageCalculator.UnitTests
         [Test]
         public void PaymentCalculatorTest()
         {
-            const decimal compareamount = (decimal)833.33; 
+            const decimal compareamount = (decimal)966.64; 
             var paymentcalc = new PaymentCalculator();
             paymentcalc.PurchasePrice = 50000;
             paymentcalc.InterestRate = (decimal) 6.0;

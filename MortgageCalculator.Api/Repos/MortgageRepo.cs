@@ -31,7 +31,8 @@ namespace MortgageCalculator.Api.Repos
                             InterestRepayment = (InterestRepayment)Enum.Parse(typeof(InterestRepayment), mortgage.InterestRepayment.ToString()),
                             MortgageId = mortgage.MortgageId,
                             MortgageType = (MortgageType)Enum.Parse(typeof(MortgageType), mortgage.MortgageType.ToString()),
-                            TermsInMonths = Math.Abs(12 * (mortgage.EffectiveStartDate.Year - mortgage.EffectiveEndDate.Year) + mortgage.EffectiveStartDate.Month - mortgage.EffectiveEndDate.Month)
+                            TermsInMonths = Math.Abs(12 * (mortgage.EffectiveStartDate.Year - mortgage.EffectiveEndDate.Year) + mortgage.EffectiveStartDate.Month - mortgage.EffectiveEndDate.Month),
+                            InterestRate = mortgage.InterestRate
                 }
                     );
                 }

@@ -2,7 +2,22 @@
 @{
     ViewBag.Title = "Mortgage Details";
 }
+<style>
+    #myTable {
+        border: 1px solid black;
+        table-layout: fixed;
+        width: 200px;
+    }
 
+        #myTable th {
+            border: 1px solid black;
+            width: 100px;
+            }
+     #myTable td {
+        border: 1px solid black;
+        width: 100px;
+    }
+</style>
 <div class="jumbotron">
     <h1>Mortgage Calculator</h1>
     <p class="lead">
@@ -55,12 +70,13 @@
 
                 <!-- Text input-->
                 <div class="form-group">
-                    
-                        <table class="table" id="mortgageview" width="100%" cellpadding="2" cellspacing="0">
+                   
+                        <table id="myTable" width="100%">
                             <thead>
                             <th>Name</th>
                             <th>MortgageType</th>
                             <th>InterestRepayment</th>
+                            <th>InterestRate%</th>
                             <th>EffectiveStartDate</th>
                             <th>EffectiveEndDate</th>
                             <th>TermsInMonths</th>
@@ -69,40 +85,43 @@
 
                             </thead>
                             @foreach (var item in Model.Mortgages)
-                             {
+        {
 
-                                        <tr>
-                                            <td>
-                                                @item.Name
-                                            </td>
-                                            <td>
-                                                @item.MortgageType
-                                            </td>
-                                            <td>
-                                                @item.InterestRepayment
-                                            </td>
-                                            <td>
-                                                @item.EffectiveStartDate
-                                            </td>
-                                            <td>
-                                                @item.EffectiveEndDate
-                                            </td>
-                                            <td>
-                                                @item.TermsInMonths
-                                            </td>
-                                            <td>
-                                                @item.CancellationFee
-                                            </td>
-                                            <td>
-                                                @item.EstablishmentFee
-                                            </td>
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.MortgageType
+                        </td>
+                        <td>
+                            @item.InterestRepayment
+                        </td>
+                        <td>
+                            @item.InterestRate
+                    </td>
+                    <td>
+                        @item.EffectiveStartDate
+                    </td>
+                    <td>
+                        @item.EffectiveEndDate
+                    </td>
+                    <td>
+                        @item.TermsInMonths
+                    </td>
+                    <td>
+                        @item.CancellationFee
+                    </td>
+                    <td>
+                        @item.EstablishmentFee
+                    </td>
 
-                                        </tr>
+                    </tr>
 
-                                }
-                                                </table>
+}
+                        </table>
 
-                                        </div>
+</div>
 
             </fieldset>
         </form>
@@ -133,6 +152,15 @@
             });
  
         });
+
+        $(document).ready(function() 
+            { 
+            $("#myTable").DataTable(); 
+            } 
+        ); 
+
+        
+
     </script>
 
 }

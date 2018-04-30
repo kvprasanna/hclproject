@@ -6,9 +6,12 @@
     <title>@ViewBag.Title - Simple Mortgage Calculator</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />  
-    <link href="~/Content/jquery.jqGrid/ui.jqgrid.css" rel="stylesheet" />  
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/jquery.jqGrid/ui.jqgrid.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/datatables.min.css" />
     
+
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -19,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="~/img/cba-logo.png"/>
+                <img src="~/img/cba-logo.png" />
                 @Html.ActionLink("Simple Mortgage Calculator", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
         </div>
@@ -34,10 +37,15 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>  
-    <script src="~/Scripts/jquery-ui-1.10.0.js"></script>  
-    <script src="~/Scripts/i18n/grid.locale-en.js"></script>  
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.0.js"></script>
+    <script src="~/Scripts/i18n/grid.locale-en.js"></script>
     <script src="~/Scripts/jquery.jqGrid.min.js"></script>
+    <script src="~/Scripts/jquery.tablesorter.js"></script>
+
+    <script  src="~/Scripts/datatables.min.js"></script>
+   
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

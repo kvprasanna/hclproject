@@ -14,3 +14,9 @@ F:\CBAProject\MortgageCalculator\MortgageCalculator.Dto\obj\Debug\MortgageCalcul
 F:\CBAProject\MortgageCalculator\MortgageCalculator.Dto\obj\Debug\MortgageCalculator.Dto.dll
 F:\CBAProject\MortgageCalculator\MortgageCalculator.Dto\obj\Debug\MortgageCalculator.Dto.pdb
 F:\CBAProject\MortgageCalculator\MortgageCalculator.Dto\obj\Debug\MortgageCalculator.Dto.csprojResolveAssemblyReference.cache
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Dto\bin\Debug\MortgageCalculator.Dto.dll
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Dto\bin\Debug\MortgageCalculator.Dto.pdb
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Dto\obj\Debug\MortgageCalculator.Dto.csprojResolveAssemblyReference.cache
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Dto\obj\Debug\MortgageCalculator.Dto.csproj.CoreCompileInputs.cache
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Dto\obj\Debug\MortgageCalculator.Dto.dll
+F:\CBAProject\MortgageCalculator\hclproject\MortgageCalculator.Dto\obj\Debug\MortgageCalculator.Dto.pdb
